@@ -1,12 +1,20 @@
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+
+import Home from "./pages/Home";
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header bg-green-100">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Navigate replace to="/home" />} />
+      </Routes>
+    </Router>
   );
 }
 
